@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 
 public class MyFrameTest {
-  /*  
+ 
  private FrameFixture window;
     
     @Before
@@ -102,6 +102,6 @@ public class MyFrameTest {
   public void tearDown() {
     window.cleanUp();
   }
- */   
+
 }
 
