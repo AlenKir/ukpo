@@ -12,7 +12,7 @@ import org.junit.Test;
 
 import ru.mvn.AhoCorasick;
 
-public class AhoCorasickTest {
+public class AhoCorasickCaseTests {
 
     @Test
     public void testDeleteAllSpaces_NewLine() {
