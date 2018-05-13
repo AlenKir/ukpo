@@ -97,12 +97,31 @@ public class AhoCorasick {
         positions = find_pattern(new_str, listOfPatterns);
         return positions;
     }
+    
+    private static boolean onlyEng(List<String> listOfPatterns)
+    {
+    	boolean b = true;
+    	for (String pattern : listOfPatterns) 
+    	{
+    		for (char ch : pattern.toCharArray())
+    		{
+    			if (!((ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122)))
+    				return false;
+    		}
+    	}
+    	return true;
+    }
 
     private static List<Integer> find_pattern(String string, List<String> listOfPatterns)
     {
         List<Integer> positions = new ArrayList<Integer>();
         AhoCorasick ahoCorasick = new AhoCorasick(100);
-        for (String pattern : listOfPatterns) {
+        if (!onlyEng(listOfPatterns))
+    	{
+    		return positions;
+    	}
+        for (String pattern : listOfPatterns) 
+        {
             ahoCorasick.addString(pattern);
         }
         int node = 0;
